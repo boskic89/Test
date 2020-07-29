@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="../css/register-page.css" />
+    <script defer src="../js/register-page.js"></script>
+  </head>
+
+  <body>
+    <div id="notification-modal" class="invisible">
+      <div id="modal-content">
+        <div id="modal-header" class="modal-success">
+          <span class="close" onclick="normalPage()">&times;</span>
+          <label id="modal-header-message"> </label>
+        </div>
+        <div id="modal-body">
+          <label id="modal-body-message"> </label>
+        </div>
+        <div id="modal-footer">
+          <div
+            id="modal-close-button"
+            class="button modal-button"
+            onclick="normalPage()"
+          >
+            OK
+          </div>
+          <div
+            id="modal-failure-button"
+            class="invisible button modal-button"
+            onclick="loadingAnimationAndFailureModal()"
+          >
+            Simulate failed submit
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loader-holder" class="invisible"><div id="loader"></div></div>
+    <div id="form-holder">
+      <div id="nav-bar">
+        <ul>
+          <li><div id="email-registration" class="active">Email</div></li>
+          <li><div id="mobile-registration">Mobile</div></li>
+        </ul>
+      </div>
+      <div id="register-header">Register</div>
+      <form id="register-form" name="register-form">
+        <div id="currency">
+          <label class="standard-label" for="currency-display">Currency:</label>
+          <div id="currency-drop">
+            <select name="currency" id="currency-display" form="register-form">
+              <option selected value="euro">euro</option>
+              <option value="usd">US dollar</option>
+              <option value="cad">Canadian dollar</option>
+              <option value="franc">Swiss franc</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-item">
+          <input
+            type="email"
+            name="email"
+            id="email-input"
+            class="visible form-input"
+            placeholder="Email address"
+            required
+          />
+          <input
+            type="text"
+            name="mobile-number"
+            id="mobile-input"
+            class="invisible form-input"
+            placeholder="Mobile number"
+          />
+          <label id="input-error-message" class="invisible"></label>
+        </div>
+        <div class="form-item">
+          <input
+            class="standard-checkbox"
+            type="checkbox"
+            id="terms"
+            name="terms"
+            value="terms"
+            required
+          />
+          <label class="standard-label" for="terms">
+            I accept the terms and conditions</label
+          >
+        </div>
+        <div class="form-item">
+          <input
+            class="standard-checkbox"
+            type="checkbox"
+            id="news"
+            name="news"
+            value="news"
+          />
+          <label class="standard-label" for="news">
+            I accept the promo notifications</label
+          >
+        </div>
+
+        <input type="submit" value="Register" id="register-form-submit" />
+      </form>
+    </div>
+  </body>
+</html>
